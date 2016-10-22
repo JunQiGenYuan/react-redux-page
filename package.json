@@ -1,0 +1,25 @@
+{
+  "name": "react-redux-page",
+  "version": "1.0.0",
+  "description": "Supply for the react-redux SPA that a page container to manage page special state.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JunQiGenYuan/react-redux-page.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "page",
+    "react-router"
+  ],
+  "author": "SimonHG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JunQiGenYuan/react-redux-page/issues"
+  },
+  "homepage": "https://github.com/JunQiGenYuan/react-redux-page#readme"
+}
