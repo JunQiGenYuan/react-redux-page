@@ -8,7 +8,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname),
-    filename: 'react-redux-page-1.js',
+    filename: 'react-redux-page.js',
     libraryTarget: 'umd',
     library: 'ReactReduxPage1'
   },
