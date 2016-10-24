@@ -7,13 +7,13 @@ import uuid from 'uuid';
 import { INIT_PAGE } from './const';
 import _createPageAction from './_createPageAction';
 
-export default (reducer, mapStateToProps, actions) => Comp => {
+export default (reducer, mapStateToProps, mapActionsToProps) => Comp => {
   const pageId = uuid.v4().toUpperCase();
 
   class PageConnected extends Component {
 
     componentDidMount() {
-      this.props.actions._initPage();
+      this.props._initPage();
     }
 
     render() {
@@ -37,17 +37,13 @@ export default (reducer, mapStateToProps, actions) => Comp => {
     return _createPageAction(pageId, reducer)(INIT_PAGE);
   }
 
-  const mapActionsToProps = dispatch => {
-    /* Populated by react-webpack-redux:action */
-    if (!actions) {
-      return {};
-    }
+  const mapPageActionsToProps = dispatch => {
     const pageDispatch = action =>
       dispatch(Object.assign({_page: pageId, _reducer: reducer}, action));
-    const pageActions = Object.assign({_initPage: initPageActionCreator}, actions);
-    const actionMap = { actions: bindActionCreators(pageActions, pageDispatch) };
-    return actionMap;
+    const pageActions = bindActionCreators({_initPage: initPageActionCreator}, dispatch);
+    const customActions = mapActionsToProps(dispatch, pageDispatch)
+    return Object.assign(pageActions, customActions);
   };
 
-  return connect(mapPageStateToProps, mapActionsToProps)(PageConnected);
+  return connect(mapPageStateToProps, mapPageActionsToProps)(PageConnected);
 };

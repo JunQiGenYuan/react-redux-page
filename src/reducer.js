@@ -1,5 +1,5 @@
 export default (state = {}, action) => {
-  const pageId = action._page;
+  const pageId = action._pageId;
   if (!pageId) {
     return state;
   }
