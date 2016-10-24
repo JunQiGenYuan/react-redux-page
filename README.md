@@ -69,7 +69,9 @@ const PageComponentConnected = connectPage(
     //if no other state need to map to props, then pass null
     //check for react-redux/connect mapStateToProps
   },
-  {...} //actions map
+  () => {
+    //same as react-redux/connect mapActionsToProps
+  }
 )(pureComponent(PageComponent));
 
 export default PageComponentConnected;
