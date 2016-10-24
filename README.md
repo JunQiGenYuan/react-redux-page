@@ -98,7 +98,11 @@ store.getState().page1
 ### connectPage
 You connect the *mapStateToProps*, *actions* and *page reducer* to a Component.
 This will generate an Id for the connected Page Component, bind all these things work together and return a connected redux container.
-And the *connectPage* will bind page state to *page* of the props, which can access in the component by: ```js this.props.page ```.
+And the *connectPage* will bind page state to *page* of the props, which can access in the component by:
+```js
+this.props.page
+```
+.
 
 ### preprocess page actions in pageMiddleware
 All actions will be binded *_pageId* and *_reducer* attributes automatically.
