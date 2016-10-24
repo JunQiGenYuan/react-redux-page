@@ -40,7 +40,7 @@ export default (reducer, mapStateToProps, mapActionsToProps) => Comp => {
 
   const mapPageActionsToProps = dispatch => {
     const pageDispatch = action =>
-      dispatch(Object.assign({_page: pageId, _reducer: reducer}, action));
+      dispatch(Object.assign({_pageId: pageId, _reducer: reducer}, action));
     const pageActions = bindActionCreators({_initPage: initPageActionCreator}, dispatch);
     const customActions = mapActionsToProps(dispatch, pageDispatch)
     return Object.assign(pageActions, customActions);

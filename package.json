@@ -1,6 +1,6 @@
 {
     "name": "react-redux-page",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Supply for the react-redux SPA that a page container to manage page special state.",
     "main": "dist/index.js",
     "repository": {

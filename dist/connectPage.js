@@ -83,7 +83,7 @@ exports.default = function (reducer, mapStateToProps, mapActionsToProps) {
 
     var mapPageActionsToProps = function mapPageActionsToProps(dispatch) {
       var pageDispatch = function pageDispatch(action) {
-        return dispatch(Object.assign({ _page: pageId, _reducer: reducer }, action));
+        return dispatch(Object.assign({ _pageId: pageId, _reducer: reducer }, action));
       };
       var pageActions = (0, _redux.bindActionCreators)({ _initPage: initPageActionCreator }, dispatch);
       var customActions = mapActionsToProps(dispatch, pageDispatch);
