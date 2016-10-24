@@ -18,7 +18,7 @@ Then you need this.
 ### create reducers
 ```js
 import { combineReducers } from 'redux';
-import { reducer as createPageReducer } from 'ReactReduxPage';
+import { reducer as createPageReducer } from 'react-redux-page';
 
 const reducers = {
   pages: createPageReducer(/*initialState*/{}),
@@ -46,7 +46,7 @@ export default store;
 ```js
 ...
 
-import { connectPage } from '../../../ReactReduxPage';
+import { connectPage } from 'react-redux-page';
 
 class PageComponent extends React.Component {
   ...
