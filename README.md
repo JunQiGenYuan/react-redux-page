@@ -80,9 +80,22 @@ export default PageComponentConnected;
 That all.
 
 ## Note that
+### About connectPage
 One time *connectPage* create one page state, which means that all instance of this connected component share the same state.
 So if you need more then one page with a component, you may *connectPage* multiple times.
 
+### Immutable Support
+If you are using Immutable state, please set config like this(before createStore):
+```js
+import { config } from 'react-redux-page';
+
+// get all pages from state
+config.getPagesFromState = (state) => state.get('pages');
+// get page from pages state
+config.getPageFromPages = (pagesState, pageId) => pagesState.get(pageId);
+// set page state to pages state
+config.setPageToPages = (pages, pageId, page) => pages.set(pageId, page);
+```
 
 ## How it work?
 ### store all pages state

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import uuid from 'uuid';
 import { INIT_PAGE } from './const';
+import config from './config';
 import _createPageAction from './_createPageAction';
 
 export default (reducer, mapStateToProps, mapActionsToProps) => Comp => {
@@ -29,7 +30,7 @@ export default (reducer, mapStateToProps, mapActionsToProps) => Comp => {
   };
 
   const mapPageStateToProps = state => ({
-    page: state.pages && state.pages[pageId],
+    page: config.getPageFromState(state, pageId),
     ...mapStateToProps(state)
   });
 

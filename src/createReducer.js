@@ -1,4 +1,6 @@
-export default (state = {}, action) => {
+import config from './config';
+
+export default initialState => (state=initialState, action) => {
   const pageId = action._pageId;
   if (!pageId) {
     return state;
@@ -8,7 +10,5 @@ export default (state = {}, action) => {
     return state;
   }
 
-  return Object.assign({
-    [pageId]: action._reducer(state && state[pageId], action)
-  }, state);
+  return config.setPageToPages(state, pageId, action._reducer(state && state[pageId], action))
 };

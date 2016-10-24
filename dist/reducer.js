@@ -4,7 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -19,5 +23,5 @@ exports.default = function () {
     return state;
   }
 
-  return Object.assign(_defineProperty({}, pageId, action._reducer(state && state[pageId], action)), state);
+  return _config2.default.setPageToPages(state, pageId, action._reducer(state && state[pageId], action));
 };

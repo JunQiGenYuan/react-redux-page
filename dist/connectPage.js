@@ -22,6 +22,10 @@ var _uuid2 = _interopRequireDefault(_uuid);
 
 var _const = require('./const');
 
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
 var _createPageAction2 = require('./_createPageAction');
 
 var _createPageAction3 = _interopRequireDefault(_createPageAction2);
@@ -69,7 +73,7 @@ exports.default = function (reducer, mapStateToProps, mapActionsToProps) {
 
     var mapPageStateToProps = function mapPageStateToProps(state) {
       return _extends({
-        page: state.pages && state.pages[pageId]
+        page: _config2.default.getPageFromState(state, pageId)
       }, mapStateToProps(state));
     };
 
