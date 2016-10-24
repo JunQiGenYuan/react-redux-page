@@ -3,7 +3,7 @@ Supply for the react-redux SPA that a page container to manage page special stat
 
 ## Installation
 To install:
-```
+```shell
 npm install --save react-redux-page
 ```
 
@@ -16,7 +16,7 @@ Then you need this.
 
 ## Usage
 ### create reducers
-```
+```js
 import { combineReducers } from 'redux';
 import { reducer as PageReducer } from 'ReactReduxPage';
 
@@ -30,7 +30,7 @@ export default combined;
 ```
 
 ### bind the middleware
-```
+```js
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 import { createPageMiddleware } from 'react-redux-page';
@@ -43,7 +43,7 @@ export default store;
 ```
 
 ### connect page
-```
+```js
 ...
 
 import { connectPage } from '../../../ReactReduxPage';
@@ -87,18 +87,18 @@ So if you need more then one page with a component, you may *connectPage* multip
 ## How it work?
 ### store all pages state
 It store all pages special state in pages of root store state, which means you can get it by:
-```
+```js
 store.getState().pages
 ```
 and a special page with id of "page1" state:
-```
+```js
 store.getState().page1
 ```
 
 ### connectPage
 You connect the *mapStateToProps*, *actions* and *page reducer* to a Component.
 This will generate an Id for the connected Page Component, bind all these things work together and return a connected redux container.
-And the *connectPage* will bind page state to *page* of the props, which can access in the component by: ``` this.props.page ```.
+And the *connectPage* will bind page state to *page* of the props, which can access in the component by: ```js this.props.page ```.
 
 ### preprocess page actions in pageMiddleware
 All actions will be binded *_pageId* and *_reducer* attributes automatically.
