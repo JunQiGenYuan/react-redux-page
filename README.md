@@ -18,10 +18,10 @@ Then you need this.
 ### create reducers
 ```js
 import { combineReducers } from 'redux';
-import { reducer as PageReducer } from 'ReactReduxPage';
+import { reducer as createPageReducer } from 'ReactReduxPage';
 
 const reducers = {
-  pages: PageReducer,
+  pages: createPageReducer(/*initialState*/{}),
   /*...otherReducers*/
 };
 const combined = combineReducers(reducers);
