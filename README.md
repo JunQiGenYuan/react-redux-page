@@ -18,7 +18,7 @@ Then you need this.
 ### create reducers
 ```js
 import { combineReducers } from 'redux';
-import { reducer as createPageReducer } from 'react-redux-page';
+import { createReducer as createPageReducer } from 'react-redux-page';
 
 const reducers = {
   pages: createPageReducer(/*initialState*/{}),
